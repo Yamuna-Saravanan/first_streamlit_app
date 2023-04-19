@@ -28,7 +28,7 @@ try:
   else:
     streamlit.error("Please select a fruit to get information")
  except URLError as e:
-  streamlit.error(e)
+    streamlit.error(e)
 
   fruityvice_normalized = pandas.json_normalize(fruityvice_response.json())
   # streamlit.text(fruityvice_normalized)
