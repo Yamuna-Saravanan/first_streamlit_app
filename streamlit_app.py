@@ -36,6 +36,6 @@ my_data_row = my_cur.fetchall()
 # streamlit.text("Hello from Snowflake:")
 # streamlit.text(my_data_row)
 streamlit.header("Fruit Load List")
-streamlit.text(my_data_row
+streamlit.text(my_data_row)
 streamlit.dataframe(my_data_row)
 
