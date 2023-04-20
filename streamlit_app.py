@@ -35,14 +35,14 @@ except URLError as e:
   # streamlit.text(fruityvice_normalized)
   streamlit.dataframe(fruityvice_normalized)
  # streamlit.button('Get Fruit Load List')
- def get_fruit_load_list():
-   with my_cnx.cursor() as my_cur:
-    my_cur.execute("select * from pc_rivery_db.public.fruit_load_list")
-      return my_cur.fetchall()
- if streamlit.button('Get Fruit Load List'):
-   my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
-   my_data_rows = get_fruit_load_list()
-   streamlit.dataframe(my_data_rows)
+def get_fruit_load_list():
+  with my_cnx.cursor() as my_cur:
+   my_cur.execute("select * from pc_rivery_db.public.fruit_load_list")
+     return my_cur.fetchall()
+if streamlit.button('Get Fruit Load List'):
+  my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
+  my_data_rows = get_fruit_load_list()
+  streamlit.dataframe(my_data_rows)
 
 streamlit.header('FruityVice Fruit Advice')
 #streamlit.button('Add a fruit to list')
