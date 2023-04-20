@@ -34,7 +34,7 @@ except URLError as e:
   fruityvice_normalized = pandas.json_normalize(fruityvice_response.json())
   # streamlit.text(fruityvice_normalized)
   streamlit.dataframe(fruityvice_normalized)
-  streamlit.button('Get Fruit Load List')
+ # streamlit.button('Get Fruit Load List')
   def get_fruit_load_list():
     with my_cnx.cursor() as my_cur:
       my_cur.execute("select * from fruit_load_list")
@@ -45,7 +45,7 @@ except URLError as e:
     streamlit.dataframe(my_data_rows)
 
 streamlit.header('FruityVice Fruit Advice')
-streamlit.button('Add a fruit to list')
+#streamlit.button('Add a fruit to list')
 def insert_row_snowflake(new_fruit):
   with my_cnx.cursor() as my_cur:
     my_cur.execute("insert into fruit_load_list values('"+new_fruit+"')")
